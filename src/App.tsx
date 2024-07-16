@@ -15,9 +15,9 @@ function App() {
     <>
       <Suspense
         fallback={
-          <div>
+          <Layout>
             <h1>Загрузка...</h1>
-          </div>
+          </Layout>
         }
       >
         <Routes>

@@ -13,12 +13,21 @@ import liveActive from "@assets/img/liveActive.svg";
 import organizations from "@assets/img/organizations.svg";
 import organizationsActive from "@assets/img/organizationsActive.svg";
 
-interface NavProps {}
+interface NavigationProps {
+  isOpen: boolean;
+  handleOpen: () => void;
+}
 
-export const Navigation: React.FC<NavProps> = () => {
+export const Navigation: React.FC<NavigationProps> = ({
+  isOpen,
+  handleOpen,
+}) => {
   return (
     <>
-      <nav className="header__nav">
+      <nav
+        className={isOpen ? "header__nav open" : "header__nav"}
+        onClick={handleOpen}
+      >
         <ul className="header__nav-list">
           <li className="header__nav-item">
             <NavLink to="/feed" className="header__nav-link">

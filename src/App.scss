@@ -8,6 +8,10 @@ body {
   color: $black;
   letter-spacing: 0;
   text-align: center;
+
+  @media (max-width: 1024px) {
+    min-width: 375px;
+  }
 }
 
 a:hover {
@@ -15,10 +19,10 @@ a:hover {
 }
 
 .wrapper {
-  width: 1160px;
+  min-width: 1160px;
   margin: 0 auto;
 
-  @media (max-width: 378px) {
-    width: 343px;
+  @media (max-width: 1024px) {
+    min-width: 375px;
   }
 }

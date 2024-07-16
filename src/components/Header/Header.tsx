@@ -1,38 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.scss";
-import { Select } from "../shared/Select/Select.tsx";
-import ru from "@assets/img/ru.svg";
-import en from "@assets/img/en.svg";
-import fr from "@assets/img/fr.svg";
-import profile from "@assets/img/profile.svg";
 import { Navigation } from "./Navigation.tsx";
-import { NavLink } from "react-router-dom";
-import logo from "@assets/img/logo.svg";
+import { LanguageSelect } from "./LanguageSelect.tsx";
+import { Buttons } from "./Buttons.tsx";
+import { Burger } from "./Burger.tsx";
+import { Logo } from "./Logo.tsx";
 
 interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+
   return (
     <header className="header">
       <div className="wrapper">
-        <div className="header__container">
-          <NavLink to="/feed" className="header__nav-link">
-            <img src={logo} alt="Sportec" width="110" height="16" />
-          </NavLink>
-          <Navigation />
-          <div className="header__burger"></div>
-          <div className="header__buttons">
-            <Select
-              options={[
-                { value: "RU", icon: <img src={ru} alt="" /> },
-                { value: "EN", icon: <img src={en} alt="" /> },
-                { value: "FR", icon: <img src={fr} alt="" /> },
-              ]}
-            />
-            <button className="header__login">
-              <img src={profile} width={40} height={40} alt="Войти" />
-            </button>
+        <div className="header__wrapper">
+          <div className="header__container">
+            <Logo />
+            <Navigation isOpen={open} handleOpen={handleOpen} />
+            <Burger open={open} handleOpen={handleOpen} />
           </div>
+          <Buttons />
+          <LanguageSelect />
         </div>
       </div>
     </header>
