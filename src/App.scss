@@ -2,19 +2,8 @@
 @import "@assets/styles/global.scss";
 @import "@assets/styles/normalize.scss";
 
-html {
-  font-size: calc(100vw / 1440 * 10);
-
-  @media(max-width: 1024px) {
-    font-size: calc(100vw / 768 * 10);
-  }
-  @media(max-width: 767px) {
-    font-size: calc(100vw / 320 * 10);
-  }
-}
-
 body {
-  font-family: $inter-regular;
+  font-family: $inter, sans-serif;
   background-color: $gray-bg;
   color: $black;
   letter-spacing: 0;
@@ -25,8 +14,11 @@ a:hover {
   cursor: pointer;
 }
 
-.wrapper{
-  max-width: 116rem;
-  width: 100%;
+.wrapper {
+  width: 1160px;
   margin: 0 auto;
+
+  @media (max-width: 378px) {
+    width: 343px;
+  }
 }

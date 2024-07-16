@@ -1,26 +1,3 @@
 @import "fonts";
 @import "variables";
 @import "normalize";
-
-html {
-  font-size: calc(100vw / 1440 * 10);
-
-  @media(max-width: 1024px) {
-    font-size: calc(100vw / 768 * 10);
-  }
-  @media(max-width: 767px) {
-    font-size: calc(100vw / 320 * 10);
-  }
-}
-
-body {
-  font-family: $inter;
-  background-color: $gray-bg;
-  color: $black;
-  letter-spacing: 0;
-  text-align: center;
-}
-
-a:hover {
-  cursor: pointer;
-}

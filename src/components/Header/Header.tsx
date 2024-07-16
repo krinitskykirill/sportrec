@@ -5,7 +5,9 @@ import ru from "@assets/img/ru.svg";
 import en from "@assets/img/en.svg";
 import fr from "@assets/img/fr.svg";
 import profile from "@assets/img/profile.svg";
-import { Nav } from "./Nav.tsx";
+import { Navigation } from "./Navigation.tsx";
+import { NavLink } from "react-router-dom";
+import logo from "@assets/img/logo.svg";
 
 interface HeaderProps {}
 
@@ -14,7 +16,11 @@ export const Header: React.FC<HeaderProps> = () => {
     <header className="header">
       <div className="wrapper">
         <div className="header__container">
-          <Nav />
+          <NavLink to="/feed" className="header__nav-link">
+            <img src={logo} alt="Sportec" width="110" height="16" />
+          </NavLink>
+          <Navigation />
+          <div className="header__burger"></div>
           <div className="header__buttons">
             <Select
               options={[
@@ -24,7 +30,7 @@ export const Header: React.FC<HeaderProps> = () => {
               ]}
             />
             <button className="header__login">
-              <img src={profile} alt="Войти" />
+              <img src={profile} width={40} height={40} alt="Войти" />
             </button>
           </div>
         </div>
