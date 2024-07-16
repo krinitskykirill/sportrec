@@ -1,0 +1,32 @@
+@import "@assets/styles/variables.scss";
+@import "@assets/styles/global.scss";
+@import "@assets/styles/normalize.scss";
+
+html {
+  font-size: calc(100vw / 1440 * 10);
+
+  @media(max-width: 1024px) {
+    font-size: calc(100vw / 768 * 10);
+  }
+  @media(max-width: 767px) {
+    font-size: calc(100vw / 320 * 10);
+  }
+}
+
+body {
+  font-family: $inter-regular;
+  background-color: $gray-bg;
+  color: $black;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.wrapper{
+  max-width: 116rem;
+  width: 100%;
+  margin: 0 auto;
+}
