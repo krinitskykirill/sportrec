@@ -22,10 +22,10 @@ export const Header: React.FC<HeaderProps> = () => {
           <div className="header__container">
             <Logo />
             <Navigation isOpen={open} handleOpen={handleOpen} />
-            <Burger open={open} handleOpen={handleOpen} />
+            <Burger isOpen={open} handleOpen={handleOpen} />
           </div>
-          <Buttons />
           <LanguageSelect />
+          <Buttons />
         </div>
       </div>
     </header>
